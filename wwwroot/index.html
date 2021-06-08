@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список сотрудников</title>
+    <link rel="stylesheet" href="site.css" />
+    <script src="js/site.js" asp-append-version="true"></script>
+</head>
+<body>
+    <h1>Cписок сотрудников</h1>
+    <h3>Добавление сторудника</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="Name">
+        <input type="text" id="add-sname" placeholder="Surname">
+        <input type="number" id="add-age" placeholder="Age">
+        <input type="number" id="add-gender" placeholder="Age">
+        <input type="number" id="add-dep" placeholder="Name">
+        <input type="number" id="add-lang" placeholder="Name">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-sname" placeholder="Surname">
+            <input type="number" id="edit-age" placeholder="Age">
+            <input type="number" id="edit-gender" placeholder="Age">
+            <input type="number" id="edit-dep" placeholder="Name">
+            <input type="number" id="edit-lang" placeholder="Name">
+
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Возраст</th>
+            <th>Пол</th>
+            <th>Отдел</th>
+            <th>Язык</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+
+        <tbody id="emplList"></tbody>
+    </table>
+
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+</html>
